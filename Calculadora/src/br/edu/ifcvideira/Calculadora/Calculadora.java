@@ -19,7 +19,7 @@ import java.awt.event.ActionEvent;
 
 public class Calculadora extends JFrame {
 
-	DecimalFormat df = DecimalFormat("0.00");
+	DecimalFormat df = new DecimalFormat ("0.00");
 	private JPanel contentPane;
 	private JTextField txVl1;
 	private JTextField txVl2;
@@ -90,7 +90,7 @@ public class Calculadora extends JFrame {
 				
 				double total = vl1d + vl2d;
 				
-				JOptionPane.showMessageDialog(null, "O resultado da soma é: "+total);
+				JOptionPane.showMessageDialog(null, "O resultado da soma é: "+df.format(total));
 			}
 		});
 		btnSoma.setBounds(218, 126, 89, 23);
@@ -107,7 +107,7 @@ public class Calculadora extends JFrame {
 				
 				double total = vl1d - vl2d;
 				
-				JOptionPane.showMessageDialog(null, "O resultado da subtração é: "+total);
+				JOptionPane.showMessageDialog(null, "O resultado da subtração é: "+df.format(total));
 			}
 		});
 		btnSubtrao.setBounds(317, 126, 89, 23);
@@ -124,7 +124,7 @@ public class Calculadora extends JFrame {
 				
 				double total = vl1d * vl2d;
 				
-				JOptionPane.showMessageDialog(null, "O resultado da subtração é: "+total);
+				JOptionPane.showMessageDialog(null, "O resultado da subtração é: "+df.format(total));
 			}
 		});
 		btnMultiplicao.setBounds(218, 159, 89, 23);
@@ -141,7 +141,7 @@ public class Calculadora extends JFrame {
 				
 				double total = vl1d / vl2d;
 				
-				JOptionPane.showMessageDialog(null, "O resultado da subtração é: "+total);
+				JOptionPane.showMessageDialog(null, "O resultado da subtração é: "+df.format(total));
 			}
 		});
 		btnDivisão.setBounds(317, 159, 89, 23);
