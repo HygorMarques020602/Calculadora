@@ -90,6 +90,19 @@ public class Calculadora extends JFrame {
 		contentPane.add(btnSoma);
 		
 		JButton btnSubtrao = new JButton("-");
+		btnSubtrao.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String vl1 = txVl1.getText();
+				String vl2 = txVl2.getText();
+				
+				double vl1d = Double.parseDouble(vl1);
+				double vl2d = Double.parseDouble(vl2);
+				
+				double total = vl1d - vl2d;
+				
+				JOptionPane.showMessageDialog(null, "O resultado da subtração é: "+total);
+			}
+		});
 		btnSubtrao.setBounds(317, 126, 89, 23);
 		contentPane.add(btnSubtrao);
 		
