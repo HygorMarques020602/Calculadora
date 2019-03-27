@@ -14,10 +14,12 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
 import java.awt.event.ActionEvent;
 
 public class Calculadora extends JFrame {
 
+	DecimalFormat df = DecimalFormat("0.00");
 	private JPanel contentPane;
 	private JTextField txVl1;
 	private JTextField txVl2;
@@ -36,6 +38,11 @@ public class Calculadora extends JFrame {
 				}
 			}
 		});
+	}
+
+	private DecimalFormat DecimalFormat(String string) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	/**
@@ -124,6 +131,19 @@ public class Calculadora extends JFrame {
 		contentPane.add(btnMultiplicao);
 		
 		JButton btnDivisão = new JButton("/");
+		btnDivisão.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String vl1 = txVl1.getText();
+				String vl2 = txVl2.getText();
+				
+				double vl1d = Double.parseDouble(vl1);
+				double vl2d = Double.parseDouble(vl2);
+				
+				double total = vl1d / vl2d;
+				
+				JOptionPane.showMessageDialog(null, "O resultado da subtração é: "+total);
+			}
+		});
 		btnDivisão.setBounds(317, 159, 89, 23);
 		contentPane.add(btnDivisão);
 	}
